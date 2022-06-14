@@ -23,7 +23,19 @@ print(A,C,G,T)
 ```
 **Alternatives**
 ``` python
-xxx
+#1. Using .count() - fastest
+s = input()
+print(s.count("A"), s.count("G"), s.count("C"), s.count("T"))
+
+#2 Using map() and unpacking the list - just one line of code
+print(*map(input().count, "ACGT"))
+
+#3 Using a dictionary - only loops once
+s = input()
+freq = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
+for i in s:
+    freq[i] = freq[i] + 1
+print(freq['A'], freq['C'], freq['G'], freq['T'])
 ```
 
 
