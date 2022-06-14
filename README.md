@@ -54,7 +54,20 @@ print(RNA)
 ```
 **Alternatives**
 ``` python
-xxx
+#1. Using .replace()
+s = input()
+print(s.replace("T", "U"))
+#or as a one-liner:
+print(input().replace("T","U"))
+
+#2 Using BioPython
+from Bio.Seq import Seq
+from Bio.Alphabet import generic_dna
+file = open("rosalind_RNA.txt", "r")
+dna = Seq(file.read(), generic_dna)
+rna = dna.transcribe()
+print rna
+
 ```
 ### 3. Complementing a strand of DNA
 **My solution**
@@ -72,5 +85,12 @@ print(s_5t3)
 ```
 **Alternatives**
 ``` python
-xxx
+#1. Using .replace()
+s = input()
+s = s.replace('A', 't').replace('T', 'a').replace('C', 'g').replace('G', 'c').upper()[::-1]
+print(s)
+
+#2. Using the string class function .maketrans()
+s = 'AAAACCCGGT'
+print(s[::-1].translate(str.maketrans('ACGT', 'TGCA')))
 ```
