@@ -2,7 +2,29 @@
 This repository contains all the Rosalind programming exercises I have solved,as well as the first solution I have found and new techniques I learned from it
 
 ### 1. Counting DNA Nucleotides
+**My solution**
+``` python
+s= input()
+A = 0
+C = 0
+G = 0
+T = 0
 
+for i in range (0,len(s)):
+    if s[i] == "A":
+        A += 1
+    elif s[i] == "C":
+        C += 1
+    elif s[i] == "G":
+        G += 1
+    elif s[i] == "T":
+        T += 1
+print(A,C,G,T)
+```
+**Alternatives**
+``` python
+xxx
+```
 
 
 ### 2. Transcribing DNA into RNA
